@@ -8,15 +8,29 @@
 
 #import "ViewController.h"
 #import <objc/objc-runtime.h>
-@interface ViewController ()
 
+@interface ViewController ()
+@property(nonatomic,strong)NSString *mydata;
+@property(nonatomic,strong)NSMutableDictionary *dataContainer;
 @end
 
+void setMyDataIMP(ViewController *self,SEL _cmd,NSString *data)
+{
+    [self.dataContainer setObject:data forKey:@"mydata"];
+}
+
+NSString *getMyDataIMP(ViewController *self,SEL _cmd)
+{
+    return [self.dataContainer objectForKey:@"mydata"];
+}
+
 @implementation ViewController
+@dynamic mydata;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.dataContainer = [[NSMutableDictionary alloc] init];
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -26,6 +40,10 @@
     }
     if (indexPath.row == 1) {
         [self getMethodAndCall];
+    }
+    if (indexPath.row == 2) {
+        self.mydata = @"dynamic data";
+        NSLog(@"Dynamic Method Resolution:%@",self.mydata);
     }
 }
 
@@ -58,5 +76,19 @@
 {
     NSLog(@"do something with arg:%@",arg);
     return [NSString stringWithFormat:@"Done with:%@",arg];
+}
+
+
++(BOOL)resolveInstanceMethod:(SEL)sel
+{
+    if (sel == @selector(mydata)) {
+        class_addMethod([self class],sel,(IMP)getMyDataIMP,"v@:");
+        return YES;
+    }
+    if (sel == @selector(setMydata:)) {
+        class_addMethod([self class],sel,(IMP)setMyDataIMP,"v@:");
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
 }
 @end
