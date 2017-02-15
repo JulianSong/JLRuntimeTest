@@ -33,6 +33,10 @@
 {
     SEL doSh = @selector(doSomething);
     objc_msgSend(self,doSh);
+    
+    SEL doShWithArg = @selector(doSomethingWithArg:);
+    NSString *returnVal = objc_msgSend(self,doShWithArg,@"oh");
+    NSLog(@"Return:%@",returnVal);
 }
 
 - (void)getMethodAndCall
@@ -47,12 +51,12 @@
 
 - (void)doSomething
 {
-    NSLog(@"do some thing");
+    NSLog(@"do something");
 }
 
 - (NSString *)doSomethingWithArg:(NSString *)arg
 {
-    NSLog(@"doSomethingWithArg:%@",arg);
+    NSLog(@"do something with arg:%@",arg);
     return [NSString stringWithFormat:@"Done with:%@",arg];
 }
 @end
