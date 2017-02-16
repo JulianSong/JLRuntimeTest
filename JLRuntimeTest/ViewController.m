@@ -104,6 +104,26 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
 
 #pragma mark - Message Forward
 
+- (BOOL)respondsToSelector:(SEL)aSelector
+{
+    if ([super respondsToSelector:aSelector]) {
+        return YES;
+    }else{
+        return [self.proxy respondsToSelector:aSelector];
+    }
+    return NO;
+}
+
+- (BOOL)isKindOfClass:(Class)aClass
+{
+    if ([super isKindOfClass:aClass]) {
+        return YES;
+    }else{
+        return [self.proxy isKindOfClass:aClass];
+    }
+    return NO;
+}
+
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
     NSMethodSignature *s = [super methodSignatureForSelector:aSelector];
