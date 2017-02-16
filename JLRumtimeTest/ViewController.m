@@ -8,10 +8,11 @@
 
 #import "ViewController.h"
 #import <objc/objc-runtime.h>
-
+#import "JLRumtimeProxyObject.h"
 @interface ViewController ()
 @property(nonatomic,strong)NSString *mydata;
 @property(nonatomic,strong)NSMutableDictionary *dataContainer;
+@property(nonatomic,strong)JLRumtimeProxyObject *proxy;
 @end
 
 void setMyDataIMP(ViewController *self,SEL _cmd,NSString *data)
@@ -30,7 +31,7 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataContainer = [[NSMutableDictionary alloc] init];
-    
+    self.proxy = [[JLRumtimeProxyObject alloc] init];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -45,7 +46,13 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
         self.mydata = @"dynamic data";
         NSLog(@"Dynamic Method Resolution:%@",self.mydata);
     }
+    if (indexPath.row == 3) {
+        id my = self;
+        [my proxySomething];
+    }
 }
+
+#pragma mark - Send msg
 
 - (void)sendMsg
 {
@@ -78,6 +85,7 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
     return [NSString stringWithFormat:@"Done with:%@",arg];
 }
 
+#pragma mark - Dynamic Method Resolution
 
 +(BOOL)resolveInstanceMethod:(SEL)sel
 {
@@ -85,10 +93,32 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
         class_addMethod([self class],sel,(IMP)getMyDataIMP,"v@:");
         return YES;
     }
+    
     if (sel == @selector(setMydata:)) {
         class_addMethod([self class],sel,(IMP)setMyDataIMP,"v@:");
         return YES;
     }
+    
     return [super resolveInstanceMethod:sel];
+}
+
+#pragma mark - Message Forward
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+    NSMethodSignature *s = [super methodSignatureForSelector:aSelector];
+    if (s == nil) {
+        s = [self.proxy methodSignatureForSelector:aSelector];
+    }
+    return s;
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    if ([self.proxy respondsToSelector:anInvocation.selector]) {
+        [anInvocation invokeWithTarget:self.proxy];
+    }else{
+        [super forwardInvocation:anInvocation];
+    }
 }
 @end
