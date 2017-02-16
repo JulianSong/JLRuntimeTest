@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JLRumtimeProxyObject : NSObject
+@interface JLRuntimeProxyObject : NSObject
 - (void)proxySomething;
 @end

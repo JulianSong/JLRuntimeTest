@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:JLRumtimeTest.xcodeproj">
+      location = "self:/Users/dereklix/Downloads/JLRuntimeTest/JLRuntimeTest.xcodeproj">
    </FileRef>
 </Workspace>

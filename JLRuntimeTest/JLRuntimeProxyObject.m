@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Julian Song. All rights reserved.
 //
 
-#import "JLRumtimeProxyObject.h"
+#import "JLRuntimeProxyObject.h"
 
-@implementation JLRumtimeProxyObject
+@implementation JLRuntimeProxyObject
 
 - (void)proxySomething
 {

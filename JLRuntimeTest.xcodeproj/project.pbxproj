@@ -7,30 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C934E9C91E54430800F7D113 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9C81E54430800F7D113 /* main.m */; };
-		C934E9CC1E54430800F7D113 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9CB1E54430800F7D113 /* AppDelegate.m */; };
-		C934E9CF1E54430800F7D113 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9CE1E54430800F7D113 /* ViewController.m */; };
-		C934E9D21E54430800F7D113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C934E9D01E54430800F7D113 /* Main.storyboard */; };
-		C934E9D41E54430800F7D113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C934E9D31E54430800F7D113 /* Assets.xcassets */; };
-		C934E9D71E54430800F7D113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C934E9D51E54430800F7D113 /* LaunchScreen.storyboard */; };
 		C934E9DF1E544E8500F7D113 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C934E9DE1E544E8500F7D113 /* README.md */; };
-		C934E9E21E55496C00F7D113 /* JLRumtimeProxyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9E11E55496C00F7D113 /* JLRumtimeProxyObject.m */; };
+		C934E9F11E5557DA00F7D113 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9E51E5557DA00F7D113 /* AppDelegate.m */; };
+		C934E9F21E5557DA00F7D113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C934E9E61E5557DA00F7D113 /* Assets.xcassets */; };
+		C934E9F31E5557DA00F7D113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C934E9E71E5557DA00F7D113 /* LaunchScreen.storyboard */; };
+		C934E9F41E5557DA00F7D113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C934E9E91E5557DA00F7D113 /* Main.storyboard */; };
+		C934E9F51E5557DA00F7D113 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C934E9EB1E5557DA00F7D113 /* Info.plist */; };
+		C934E9F61E5557DA00F7D113 /* JLRuntimeProxyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9ED1E5557DA00F7D113 /* JLRuntimeProxyObject.m */; };
+		C934E9F71E5557DA00F7D113 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9EE1E5557DA00F7D113 /* main.m */; };
+		C934E9F81E5557DA00F7D113 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9F01E5557DA00F7D113 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C934E9C41E54430800F7D113 /* JLRumtimeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLRumtimeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C934E9C81E54430800F7D113 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C934E9CA1E54430800F7D113 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C934E9CB1E54430800F7D113 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C934E9CD1E54430800F7D113 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C934E9CE1E54430800F7D113 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C934E9D11E54430800F7D113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C934E9D31E54430800F7D113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C934E9D61E54430800F7D113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C934E9D81E54430800F7D113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C934E9C41E54430800F7D113 /* JLRuntimeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLRuntimeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C934E9DE1E544E8500F7D113 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C934E9E01E55496C00F7D113 /* JLRumtimeProxyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLRumtimeProxyObject.h; sourceTree = "<group>"; };
-		C934E9E11E55496C00F7D113 /* JLRumtimeProxyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLRumtimeProxyObject.m; sourceTree = "<group>"; };
+		C934E9E41E5557DA00F7D113 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C934E9E51E5557DA00F7D113 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C934E9E61E5557DA00F7D113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C934E9E81E5557DA00F7D113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C934E9EA1E5557DA00F7D113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C934E9EB1E5557DA00F7D113 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C934E9EC1E5557DA00F7D113 /* JLRuntimeProxyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLRuntimeProxyObject.h; sourceTree = "<group>"; };
+		C934E9ED1E5557DA00F7D113 /* JLRuntimeProxyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLRuntimeProxyObject.m; sourceTree = "<group>"; };
+		C934E9EE1E5557DA00F7D113 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C934E9EF1E5557DA00F7D113 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C934E9F01E5557DA00F7D113 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				C934E9DE1E544E8500F7D113 /* README.md */,
-				C934E9C61E54430800F7D113 /* JLRumtimeTest */,
+				C934E9E31E5557DA00F7D113 /* JLRuntimeTest */,
 				C934E9C51E54430800F7D113 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,43 +57,35 @@
 		C934E9C51E54430800F7D113 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C934E9C41E54430800F7D113 /* JLRumtimeTest.app */,
+				C934E9C41E54430800F7D113 /* JLRuntimeTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C934E9C61E54430800F7D113 /* JLRumtimeTest */ = {
+		C934E9E31E5557DA00F7D113 /* JLRuntimeTest */ = {
 			isa = PBXGroup;
 			children = (
-				C934E9CA1E54430800F7D113 /* AppDelegate.h */,
-				C934E9CB1E54430800F7D113 /* AppDelegate.m */,
-				C934E9CD1E54430800F7D113 /* ViewController.h */,
-				C934E9CE1E54430800F7D113 /* ViewController.m */,
-				C934E9D01E54430800F7D113 /* Main.storyboard */,
-				C934E9E01E55496C00F7D113 /* JLRumtimeProxyObject.h */,
-				C934E9E11E55496C00F7D113 /* JLRumtimeProxyObject.m */,
-				C934E9D31E54430800F7D113 /* Assets.xcassets */,
-				C934E9D51E54430800F7D113 /* LaunchScreen.storyboard */,
-				C934E9D81E54430800F7D113 /* Info.plist */,
-				C934E9C71E54430800F7D113 /* Supporting Files */,
+				C934E9E41E5557DA00F7D113 /* AppDelegate.h */,
+				C934E9E51E5557DA00F7D113 /* AppDelegate.m */,
+				C934E9E61E5557DA00F7D113 /* Assets.xcassets */,
+				C934E9E71E5557DA00F7D113 /* LaunchScreen.storyboard */,
+				C934E9E91E5557DA00F7D113 /* Main.storyboard */,
+				C934E9EB1E5557DA00F7D113 /* Info.plist */,
+				C934E9EC1E5557DA00F7D113 /* JLRuntimeProxyObject.h */,
+				C934E9ED1E5557DA00F7D113 /* JLRuntimeProxyObject.m */,
+				C934E9EE1E5557DA00F7D113 /* main.m */,
+				C934E9EF1E5557DA00F7D113 /* ViewController.h */,
+				C934E9F01E5557DA00F7D113 /* ViewController.m */,
 			);
-			path = JLRumtimeTest;
-			sourceTree = "<group>";
-		};
-		C934E9C71E54430800F7D113 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C934E9C81E54430800F7D113 /* main.m */,
-			);
-			name = "Supporting Files";
+			path = JLRuntimeTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C934E9C31E54430800F7D113 /* JLRumtimeTest */ = {
+		C934E9C31E54430800F7D113 /* JLRuntimeTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C934E9DB1E54430800F7D113 /* Build configuration list for PBXNativeTarget "JLRumtimeTest" */;
+			buildConfigurationList = C934E9DB1E54430800F7D113 /* Build configuration list for PBXNativeTarget "JLRuntimeTest" */;
 			buildPhases = (
 				C934E9C01E54430800F7D113 /* Sources */,
 				C934E9C11E54430800F7D113 /* Frameworks */,
@@ -102,9 +95,9 @@
 			);
 			dependencies = (
 			);
-			name = JLRumtimeTest;
+			name = JLRuntimeTest;
 			productName = JLRumtimeTest;
-			productReference = C934E9C41E54430800F7D113 /* JLRumtimeTest.app */;
+			productReference = C934E9C41E54430800F7D113 /* JLRuntimeTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -122,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C934E9BF1E54430800F7D113 /* Build configuration list for PBXProject "JLRumtimeTest" */;
+			buildConfigurationList = C934E9BF1E54430800F7D113 /* Build configuration list for PBXProject "JLRuntimeTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -135,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C934E9C31E54430800F7D113 /* JLRumtimeTest */,
+				C934E9C31E54430800F7D113 /* JLRuntimeTest */,
 			);
 		};
 /* End PBXProject section */
@@ -145,9 +138,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C934E9D71E54430800F7D113 /* LaunchScreen.storyboard in Resources */,
-				C934E9D41E54430800F7D113 /* Assets.xcassets in Resources */,
-				C934E9D21E54430800F7D113 /* Main.storyboard in Resources */,
+				C934E9F51E5557DA00F7D113 /* Info.plist in Resources */,
+				C934E9F41E5557DA00F7D113 /* Main.storyboard in Resources */,
+				C934E9F21E5557DA00F7D113 /* Assets.xcassets in Resources */,
+				C934E9F31E5557DA00F7D113 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,31 +152,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C934E9E21E55496C00F7D113 /* JLRumtimeProxyObject.m in Sources */,
-				C934E9CF1E54430800F7D113 /* ViewController.m in Sources */,
-				C934E9CC1E54430800F7D113 /* AppDelegate.m in Sources */,
+				C934E9F11E5557DA00F7D113 /* AppDelegate.m in Sources */,
+				C934E9F61E5557DA00F7D113 /* JLRuntimeProxyObject.m in Sources */,
+				C934E9F71E5557DA00F7D113 /* main.m in Sources */,
 				C934E9DF1E544E8500F7D113 /* README.md in Sources */,
-				C934E9C91E54430800F7D113 /* main.m in Sources */,
+				C934E9F81E5557DA00F7D113 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C934E9D01E54430800F7D113 /* Main.storyboard */ = {
+		C934E9E71E5557DA00F7D113 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C934E9D11E54430800F7D113 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C934E9D51E54430800F7D113 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C934E9D61E54430800F7D113 /* Base */,
+				C934E9E81E5557DA00F7D113 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C934E9E91E5557DA00F7D113 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C934E9EA1E5557DA00F7D113 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -281,9 +275,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
-				INFOPLIST_FILE = JLRumtimeTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JLRuntimeTest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.julian.JLRumtimeTest;
+				PRODUCT_BUNDLE_IDENTIFIER = me.julian.JLRuntimeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -293,9 +287,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
-				INFOPLIST_FILE = JLRumtimeTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JLRuntimeTest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.julian.JLRumtimeTest;
+				PRODUCT_BUNDLE_IDENTIFIER = me.julian.JLRuntimeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -303,7 +297,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C934E9BF1E54430800F7D113 /* Build configuration list for PBXProject "JLRumtimeTest" */ = {
+		C934E9BF1E54430800F7D113 /* Build configuration list for PBXProject "JLRuntimeTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C934E9D91E54430800F7D113 /* Debug */,
@@ -312,7 +306,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C934E9DB1E54430800F7D113 /* Build configuration list for PBXNativeTarget "JLRumtimeTest" */ = {
+		C934E9DB1E54430800F7D113 /* Build configuration list for PBXNativeTarget "JLRuntimeTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C934E9DC1E54430800F7D113 /* Debug */,

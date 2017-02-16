@@ -8,11 +8,11 @@
 
 #import "ViewController.h"
 #import <objc/objc-runtime.h>
-#import "JLRumtimeProxyObject.h"
+#import "JLRuntimeProxyObject.h"
 @interface ViewController ()
 @property(nonatomic,strong)NSString *mydata;
 @property(nonatomic,strong)NSMutableDictionary *dataContainer;
-@property(nonatomic,strong)JLRumtimeProxyObject *proxy;
+@property(nonatomic,strong)JLRuntimeProxyObject *proxy;
 @end
 
 void setMyDataIMP(ViewController *self,SEL _cmd,NSString *data)
@@ -31,7 +31,7 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataContainer = [[NSMutableDictionary alloc] init];
-    self.proxy = [[JLRumtimeProxyObject alloc] init];
+    self.proxy = [[JLRuntimeProxyObject alloc] init];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
