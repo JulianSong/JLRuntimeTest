@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <objc/objc-runtime.h>
 #import "JLRuntimeProxyObject.h"
+#import "JLRuntimeProxyObject+AddProperty.h"
 @interface ViewController ()
 @property(nonatomic,strong)NSString *mydata;
 @property(nonatomic,strong)NSMutableDictionary *dataContainer;
@@ -49,6 +50,13 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
     if (indexPath.row == 3) {
         id my = self;
         [my proxySomething];
+    }
+    if (indexPath.row == 4) {
+        [self typeEncodings];
+    }
+    if (indexPath.row == 5) {
+        self.proxy.name = @"Jerry";
+        NSLog(@"Proxy name %@",self.proxy.name);
     }
 }
 
@@ -141,4 +149,37 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
         [super forwardInvocation:anInvocation];
     }
 }
+
+#pragma mark - Type Encodings
+
+-(void)typeEncodings
+{
+    NSLog(@"int        : %s", @encode(int));
+    NSLog(@"float      : %s", @encode(float));
+    NSLog(@"float *    : %s", @encode(float*));
+    NSLog(@"char       : %s", @encode(char));
+    NSLog(@"char *     : %s", @encode(char *));
+    NSLog(@"BOOL       : %s", @encode(BOOL));
+    NSLog(@"void       : %s", @encode(void));
+    NSLog(@"void *     : %s", @encode(void *));
+    
+    NSLog(@"NSObject * : %s", @encode(NSObject *));
+    NSLog(@"NSObject   : %s", @encode(NSObject));
+    NSLog(@"[NSObject] : %s", @encode(typeof([NSObject class])));
+    NSLog(@"NSError ** : %s", @encode(typeof(NSError **)));
+    
+    int intArray[5] = {1, 2, 3, 4, 5};
+    NSLog(@"int[]      : %s", @encode(typeof(intArray)));
+    
+    float floatArray[3] = {0.1f, 0.2f, 0.3f};
+    NSLog(@"float[]    : %s", @encode(typeof(floatArray)));
+    
+    typedef struct _struct {
+        short a;
+        long long b;
+        unsigned long long c;
+    } Struct;
+    NSLog(@"struct     : %s", @encode(typeof(Struct)));
+}
+
 @end
