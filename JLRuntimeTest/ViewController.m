@@ -11,6 +11,9 @@
 #import "JLRuntimeProxyObject.h"
 #import "JLRuntimeProxyObject+AddProperty.h"
 @interface ViewController ()
+{
+    NSString *value_myType;
+}
 @property(nonatomic,strong)NSString *mydata;
 @property(nonatomic,strong)NSMutableDictionary *dataContainer;
 @property(nonatomic,strong)JLRuntimeProxyObject *proxy;
@@ -24,6 +27,21 @@ void setMyDataIMP(ViewController *self,SEL _cmd,NSString *data)
 NSString *getMyDataIMP(ViewController *self,SEL _cmd)
 {
     return [self.dataContainer objectForKey:@"mydata"];
+}
+
+NSString *getMyTypeIMP(id self,SEL _cmd)
+{
+    Ivar var = class_getInstanceVariable([self class],"value_myType");
+    return object_getIvar(self,var);
+}
+
+void setMyTypeIMP(id self,SEL _cmd,NSString *value)
+{
+    Ivar var = class_getInstanceVariable([self class],"value_myType");
+    id oldType = object_getIvar(self,var);
+    if (oldType != value) {
+        object_setIvar(self,var,value);
+    }
 }
 
 @implementation ViewController
@@ -66,6 +84,10 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
     
     if (indexPath.row == 6) {
         [self propertyList];
+    }
+    
+    if (indexPath.row == 7) {
+        [self addProperty];
     }
 }
 
@@ -196,7 +218,7 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
 - (void)propertyList
 {
     unsigned int outCount;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
+    objc_property_t *properties = class_copyPropertyList([self.proxy class], &outCount);
     for (int i = 0; i < outCount; i ++) {
         objc_property_t property = properties[i];
         const char * p_name = property_getName(property);
@@ -211,6 +233,31 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
         }
         free(property_attributes);
     }
+    
+}
+
+- (void)addProperty
+{
+    objc_property_attribute_t t1 = {"T","@\"NSString\""};
+    objc_property_attribute_t t2 = {"&",""};
+    objc_property_attribute_t t3 = {"D",""};
+    objc_property_attribute_t t4 = {"N",""};
+    objc_property_attribute_t t5 = {"V","value_myType"};
+    objc_property_attribute_t attributes[] = {t1,t2,t3,t4,t5};
+    if(class_addProperty([self class],"myType",attributes,4)){
+        
+//        class_addIvar([self class],"value_myType",sizeof(id),0,"@");//静态类无法动态添加示例变量
+        SEL myTypeSEL = sel_registerName("myType");
+        SEL setMyTypeSEL = sel_registerName("setMytype");
+        class_addMethod([self class],myTypeSEL,(IMP)getMyTypeIMP, "v@:");
+        class_addMethod([self class],setMyTypeSEL,(IMP)setMyTypeIMP, "v@:");
+        NSLog(@"add property done!");
+        
+        id my = self;
+        [my performSelector:setMyTypeSEL withObject:@"wowww"];
+        NSLog(@"the added property %@",[my performSelector:myTypeSEL]);
+    }
+
     
 }
 @end
