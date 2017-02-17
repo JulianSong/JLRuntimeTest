@@ -40,23 +40,32 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
     if (indexPath.row == 0) {
         [self sendMsg];
     }
+    
     if (indexPath.row == 1) {
         [self getMethodAndCall];
     }
+    
     if (indexPath.row == 2) {
         self.mydata = @"dynamic data";
         NSLog(@"Dynamic Method Resolution:%@",self.mydata);
     }
+    
     if (indexPath.row == 3) {
         id my = self;
         [my proxySomething];
     }
+    
     if (indexPath.row == 4) {
         [self typeEncodings];
     }
+    
     if (indexPath.row == 5) {
         self.proxy.name = @"Jerry";
         NSLog(@"Proxy name %@",self.proxy.name);
+    }
+    
+    if (indexPath.row == 6) {
+        [self propertyList];
     }
 }
 
@@ -182,4 +191,26 @@ NSString *getMyDataIMP(ViewController *self,SEL _cmd)
     NSLog(@"struct     : %s", @encode(typeof(Struct)));
 }
 
+#pragma mark - Property
+
+- (void)propertyList
+{
+    unsigned int outCount;
+    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
+    for (int i = 0; i < outCount; i ++) {
+        objc_property_t property = properties[i];
+        const char * p_name = property_getName(property);
+        fprintf(stdout, "%s %s\n",p_name, property_getAttributes(property));
+        fprintf(stdout, "------------------\n");
+        unsigned int paCount;
+        objc_property_attribute_t *property_attributes = property_copyAttributeList(property, &paCount);
+        for (int pi =0 ; pi < paCount; pi ++) {
+            objc_property_attribute_t pa = property_attributes[pi];
+            const char *pa_value = property_copyAttributeValue(property,pa.name);
+            fprintf(stdout, "  pa name:%s pa value%s\n",pa.name,pa_value);
+        }
+        free(property_attributes);
+    }
+    
+}
 @end
