@@ -15,21 +15,32 @@ static  NSString * const JLRuntimeProxyObject_name = @"JLRuntimeProxyObject_name
 
 + (void)initialize
 {
-    IMP to = class_getMethodImplementation([self class], @selector(proxySomething3_repleace));
-    class_replaceMethod([self class], @selector(proxySomething3), to,"v@:");
+    IMP fromeIMP = class_getMethodImplementation([self class], @selector(proxySomething3_replace));
+    IMP toIMP = class_getMethodImplementation([self class], @selector(proxySomething3));
+    
+    class_replaceMethod([self class], @selector(proxySomething3),fromeIMP,"v@:");
+    class_replaceMethod([self class], @selector(proxySomething3_replace), toIMP,"v@:");
+    
+//    Method from = class_getInstanceMethod([self class], @selector(proxySomething3));
+    
+//    Method to = class_getInstanceMethod([self class], @selector(proxySomething3_replace));
+//    method_exchangeImplementations(to,from);
+    
 }
 - (void)setName:(NSString *)name
 {
     objc_setAssociatedObject(self, (__bridge const void *)(JLRuntimeProxyObject_name), name, OBJC_ASSOCIATION_COPY);
 }
+
 - (NSString *)name
 {
     return objc_getAssociatedObject(self,(__bridge const void *)(JLRuntimeProxyObject_name));
 }
 
-- (void)proxySomething3_repleace
+- (void)proxySomething3_replace
 {
-    
-    NSLog(@"dddddd");
+    NSLog(@"my cmd is %@",NSStringFromSelector(_cmd));
+    [self proxySomething3_replace];
 }
+
 @end
