@@ -17,6 +17,7 @@
 		C934E9F71E5557DA00F7D113 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9EE1E5557DA00F7D113 /* main.m */; };
 		C934E9F81E5557DA00F7D113 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9F01E5557DA00F7D113 /* ViewController.m */; };
 		C934EA011E56A23400F7D113 /* JLRuntimeProxyObject+AddProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C934EA001E56A23400F7D113 /* JLRuntimeProxyObject+AddProperty.m */; };
+		C93D105B1E5ADCA4005A268C /* JLRuntimeSubProxyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C93D105A1E5ADCA4005A268C /* JLRuntimeSubProxyObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		C934E9F01E5557DA00F7D113 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C934E9FF1E56A23400F7D113 /* JLRuntimeProxyObject+AddProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JLRuntimeProxyObject+AddProperty.h"; sourceTree = "<group>"; };
 		C934EA001E56A23400F7D113 /* JLRuntimeProxyObject+AddProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JLRuntimeProxyObject+AddProperty.m"; sourceTree = "<group>"; };
+		C93D10591E5ADCA4005A268C /* JLRuntimeSubProxyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLRuntimeSubProxyObject.h; sourceTree = "<group>"; };
+		C93D105A1E5ADCA4005A268C /* JLRuntimeSubProxyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLRuntimeSubProxyObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				C934E9EC1E5557DA00F7D113 /* JLRuntimeProxyObject.h */,
 				C934E9ED1E5557DA00F7D113 /* JLRuntimeProxyObject.m */,
 				C934E9EE1E5557DA00F7D113 /* main.m */,
+				C93D10591E5ADCA4005A268C /* JLRuntimeSubProxyObject.h */,
+				C93D105A1E5ADCA4005A268C /* JLRuntimeSubProxyObject.m */,
 			);
 			path = JLRuntimeTest;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				C934E9F61E5557DA00F7D113 /* JLRuntimeProxyObject.m in Sources */,
 				C934E9F71E5557DA00F7D113 /* main.m in Sources */,
 				C934E9DF1E544E8500F7D113 /* README.md in Sources */,
+				C93D105B1E5ADCA4005A268C /* JLRuntimeSubProxyObject.m in Sources */,
 				C934E9F81E5557DA00F7D113 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

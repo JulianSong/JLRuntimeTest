@@ -10,6 +10,7 @@
 #import <objc/objc-runtime.h>
 #import "JLRuntimeProxyObject.h"
 #import "JLRuntimeProxyObject+AddProperty.h"
+#import "JLRuntimeSubProxyObject.h"
 @interface ViewController ()
 {
     NSString *value_myType;
@@ -88,6 +89,13 @@ void setMyTypeIMP(id self,SEL _cmd,NSString *value)
     
     if (indexPath.row == 7) {
         [self addProperty];
+    }
+    
+    if (indexPath.row == 8) {
+        [self setClass];
+    }
+    if (indexPath.row == 9) {
+        [self changeMethod];
     }
 }
 
@@ -258,6 +266,16 @@ void setMyTypeIMP(id self,SEL _cmd,NSString *value)
         NSLog(@"the added property %@",[my performSelector:myTypeSEL]);
     }
 
-    
+}
+
+- (void)setClass
+{
+    object_setClass(self.proxy,[JLRuntimeSubProxyObject class]);
+    [self.proxy proxySomething];
+}
+
+- (void)changeMethod
+{
+    [self.proxy proxySomething3];
 }
 @end

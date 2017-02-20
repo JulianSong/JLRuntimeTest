@@ -11,4 +11,5 @@
 @interface JLRuntimeProxyObject : NSObject
 - (void)proxySomething;
 - (void)proxySomething2;
+- (void)proxySomething3;
 @end
