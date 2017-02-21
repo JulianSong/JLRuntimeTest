@@ -173,6 +173,31 @@ void setMyTypeIMP(id self,SEL _cmd,NSString *value)
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
+    /*
+     <NSMethodSignature: 0x600000260500>
+     number of arguments = 2
+     frame size = 224
+     is special struct return? NO
+     return value: -------- -------- -------- --------
+     type encoding (v) 'v'
+     flags {}
+     modifiers {}
+     frame {offset = 0, offset adjust = 0, size = 0, size adjust = 0}
+     memory {offset = 0, size = 0}
+     argument 0: -------- -------- -------- --------
+     type encoding (@) '@'
+     flags {isObject}
+     modifiers {}
+     frame {offset = 0, offset adjust = 0, size = 8, size adjust = 0}
+     memory {offset = 0, size = 8}
+     argument 1: -------- -------- -------- --------
+     type encoding (:) ':'
+     flags {}
+     modifiers {}
+     frame {offset = 8, offset adjust = 0, size = 8, size adjust = 0}
+     memory {offset = 0, size = 8}
+     */
+    
     NSMethodSignature *s = [super methodSignatureForSelector:aSelector];
     if (s == nil) {
         s = [self.proxy methodSignatureForSelector:aSelector];
@@ -182,6 +207,17 @@ void setMyTypeIMP(id self,SEL _cmd,NSString *value)
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
+    /*
+     <NSInvocation: 0x600000275640>
+     return value: {v} void
+     target: {@} 0x7f84f1d09ce0
+     selector: {:} proxySomething
+     
+     调用一个方法需要SEL（选择器）NSMethodSignature（方法签名） target 三个数据。
+     选择器是方法名，用户获取方法实现（函数指针）以便调用。
+     方法签名包含方法参数个数和类型以及返回值类型。方法被调用时使用此数据解析输入输出数据。
+     target 为消息接收对象。
+     */
     if ([self.proxy respondsToSelector:anInvocation.selector]) {
         [anInvocation invokeWithTarget:self.proxy];
     }else{
@@ -257,7 +293,15 @@ void setMyTypeIMP(id self,SEL _cmd,NSString *value)
 //        class_addIvar([self class],"value_myType",sizeof(id),0,"@");//静态类无法动态添加示例变量
         SEL myTypeSEL = sel_registerName("myType");
         SEL setMyTypeSEL = sel_registerName("setMytype");
-        class_addMethod([self class],myTypeSEL,(IMP)getMyTypeIMP, "v@:");
+        /*
+         class_addMethod 的第三个参数以字符串的格式描述了函数的接收与返回参数的类型。
+         在此处@@:表述为返回参数为对象类型，第二个参数为self，第三个参数为_cmd
+         如有其它参数则使用@encode函数编码后添加。
+         详见 https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
+             https://developer.apple.com/reference/objectivec/1418901-class_addmethod?language=objc
+         */
+        
+        class_addMethod([self class],myTypeSEL,(IMP)getMyTypeIMP, "@@:");
         class_addMethod([self class],setMyTypeSEL,(IMP)setMyTypeIMP, "v@:");
         NSLog(@"add property done!");
         

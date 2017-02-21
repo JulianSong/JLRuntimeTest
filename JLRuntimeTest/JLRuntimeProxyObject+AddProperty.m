@@ -15,16 +15,18 @@ static  NSString * const JLRuntimeProxyObject_name = @"JLRuntimeProxyObject_name
 
 + (void)initialize
 {
-    IMP fromeIMP = class_getMethodImplementation([self class], @selector(proxySomething3_replace));
-    IMP toIMP = class_getMethodImplementation([self class], @selector(proxySomething3));
+//    IMP fromeIMP = class_getMethodImplementation([self class], @selector(proxySomething3_replace));
+//    IMP toIMP = class_getMethodImplementation([self class], @selector(proxySomething3));
     
-    class_replaceMethod([self class], @selector(proxySomething3),fromeIMP,"v@:");
-    class_replaceMethod([self class], @selector(proxySomething3_replace), toIMP,"v@:");
+//    class_replaceMethod([self class], @selector(proxySomething3),fromeIMP,"v@:");
+//    class_replaceMethod([self class], @selector(proxySomething3_replace), toIMP,"v@:");
     
-//    Method from = class_getInstanceMethod([self class], @selector(proxySomething3));
+    Method from = class_getInstanceMethod([self class], @selector(proxySomething3));
     
-//    Method to = class_getInstanceMethod([self class], @selector(proxySomething3_replace));
-//    method_exchangeImplementations(to,from);
+    Method to = class_getInstanceMethod([self class], @selector(proxySomething3_replace));
+    char *te = method_getTypeEncoding(to);
+    method_exchangeImplementations(to,from);
+    
     
 }
 - (void)setName:(NSString *)name
